@@ -1,0 +1,27 @@
+% !TEX program = xelatex
+% Copy to the task directory; write its sibling content.tex from the actual course sources.
+\documentclass[UTF8,a4paper,11pt,oneside,openany,fontset=fandol]{ctexbook}
+\usepackage[margin=2.1cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,tabularx,graphicx,enumitem,listings,xcolor,needspace}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,hyperref}
+\definecolor{ink}{HTML}{173D50}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=ink}
+\newcommand{\HandoutTitle}{课程期末复习讲义}
+\newcommand{\SourceNote}[1]{\par{\footnotesize\color{gray}来源：#1}\par}
+\newcommand{\ExamKey}[1]{\begin{tcolorbox}[breakable,colback=blue!3,colframe=ink,title=解题抓手]#1\end{tcolorbox}}
+\newcommand{\Pitfall}[1]{\begin{tcolorbox}[breakable,colback=yellow!4,colframe=orange!50!black,title=易错点]#1\end{tcolorbox}}
+\setlength{\parskip}{3pt}\setlength{\emergencystretch}{3em}
+\setlist{nosep,topsep=5pt,leftmargin=2em}
+\renewcommand{\arraystretch}{1.2}
+\setcounter{tocdepth}{1}
+\lstset{basicstyle=\small\ttfamily,columns=fullflexible,keepspaces=true,breaklines=true,frame=single,showstringspaces=false}
+\ctexset{chapter={format=\Huge\bfseries\color{ink},beforeskip=10pt,afterskip=16pt},section={format=\Large\bfseries\color{ink}}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\HandoutTitle}\fancyhead[R]{\small 概念 / 方法 / 例题 / 自测}\fancyfoot[C]{\thepage}
+\title{\HandoutTitle}\author{}\date{}
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+\frontmatter\hypersetup{pageanchor=true}\tableofcontents\mainmatter
+\input{content.tex}
+\end{document}

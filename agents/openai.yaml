@@ -1,0 +1,4 @@
+interface:
+  display_name: "期末复习与真题汇编"
+  short_description: "制作期末复习讲义、开卷速查与原题截图去重汇编，附随题答案和来源索引"
+  default_prompt: "使用 $exam-study-pack，结合我提供的课件、教材和试卷，制作符合用途的考试复习资料并核查来源与答案。"

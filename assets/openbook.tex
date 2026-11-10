@@ -1,0 +1,24 @@
+% !TEX program = xelatex
+% Copy to the task directory; write its sibling content.tex with the actual lookup entries.
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=1.7cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,tabularx,array,graphicx,enumitem,listings,xcolor,needspace}
+\usepackage{fancyhdr,hyperref}
+\definecolor{ink}{HTML}{173D50}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=ink}
+\newcommand{\ExamTitle}{开卷考试速查}
+\newcommand{\SourceNote}[1]{\par{\footnotesize\color{gray}来源：#1}\par}
+% Use inside a longtable to link actual keywords to labels in content.tex.
+\newcommand{\LookupRow}[2]{#1 & \hyperref[#2]{第\pageref*{#2}页}\\}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\setlength{\emergencystretch}{3em}
+\setlist{nosep,topsep=3pt,leftmargin=1.6em}
+\renewcommand{\arraystretch}{1.15}
+\setcounter{tocdepth}{1}
+\lstset{basicstyle=\small\ttfamily,columns=fullflexible,keepspaces=true,breaklines=true,frame=single,showstringspaces=false}
+\ctexset{section={format=\large\bfseries\color{ink},beforeskip=8pt,afterskip=4pt}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\ExamTitle}\fancyhead[R]{\small 按关键词与题型查阅}\fancyfoot[C]{\thepage}
+\begin{document}
+{\Large\bfseries\color{ink}\ExamTitle}\par
+\smallskip
+\input{content.tex}
+\end{document}
